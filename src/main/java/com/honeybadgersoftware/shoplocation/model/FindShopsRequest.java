@@ -12,4 +12,5 @@ import lombok.NoArgsConstructor;
 public class FindShopsRequest {
     private Double longitude;
     private Double latitude;
+    private Integer radius;
 }

@@ -1,5 +1,6 @@
 package com.honeybadgersoftware.shoplocation.service.impl;
 
+import com.honeybadgersoftware.shoplocation.model.entity.ShopEntity;
 import com.honeybadgersoftware.shoplocation.repository.ShopLocationRepository;
 import com.honeybadgersoftware.shoplocation.service.ShopLocationService;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +16,26 @@ public class ShopLocationServiceImpl implements ShopLocationService {
 
     @Override
     public List<Long> getShops(List<String> shopNames) {
-        return null;
+        return filterShopEntities(shopLocationRepository.findAll(), normalizeShopNames(shopNames));
     }
+
+    private List<Long> filterShopEntities(List<ShopEntity> entities, List<String> shopNames) {
+        return entities.stream()
+                .filter(entity -> isNameContainedInShopNames(entity.getShopName(), shopNames))
+                .map(ShopEntity::getId)
+                .toList();
+    }
+
+    private List<String> normalizeShopNames(List<String> shopNames) {
+        return shopNames.stream()
+                .map(String::toLowerCase)
+                .toList();
+    }
+
+    private boolean isNameContainedInShopNames(String name, List<String> shopNames) {
+        String lowerCaseName = name.toLowerCase();
+        return shopNames.stream()
+                .anyMatch(shopName -> shopName.contains(lowerCaseName));
+    }
+
 }

@@ -1,6 +1,8 @@
 package com.honeybadgersoftware.shoplocation.controller;
 
+import com.honeybadgersoftware.shoplocation.facade.utils.ShopLocationFacade;
 import com.honeybadgersoftware.shoplocation.model.FindShopsRequest;
+import com.honeybadgersoftware.shoplocation.model.response.NearbyShopsIdsResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,8 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class ShopLocationController {
 
+    private final ShopLocationFacade shopLocationFacade;
+
     @PostMapping
-    public ResponseEntity<Void> findNearbyShops(FindShopsRequest findShopsRequest) {
+    public ResponseEntity<NearbyShopsIdsResponse> findNearbyShopsIds(FindShopsRequest findShopsRequest) {
         return null;
     }
 }
