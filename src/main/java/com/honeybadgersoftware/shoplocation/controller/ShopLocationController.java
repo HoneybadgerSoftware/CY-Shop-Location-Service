@@ -1,6 +1,6 @@
 package com.honeybadgersoftware.shoplocation.controller;
 
-import com.honeybadgersoftware.shoplocation.facade.utils.ShopLocationFacade;
+import com.honeybadgersoftware.shoplocation.facade.ShopLocationFacade;
 import com.honeybadgersoftware.shoplocation.model.FindShopsRequest;
 import com.honeybadgersoftware.shoplocation.model.response.NearbyShopsIdsResponse;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +18,6 @@ public class ShopLocationController {
 
     @PostMapping
     public ResponseEntity<NearbyShopsIdsResponse> findNearbyShopsIds(FindShopsRequest findShopsRequest) {
-        return null;
+        return ResponseEntity.ok(shopLocationFacade.getNearbyShopsIds(findShopsRequest));
     }
 }

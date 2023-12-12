@@ -32,7 +32,6 @@ abstract class BaseIntegrationTest extends Specification {
     WireMockServer wireMock = new WireMockServer(8081)
 
     def setup() {
-        addressToUseForTests = 'http://localhost:' + port
         wireMock.start()
     }
 
