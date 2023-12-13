@@ -1,6 +1,11 @@
 databaseChangeLog:
-  - changeSet:
-      id: 0
-      author: admin
-      changes:
-        -
+  - include:
+      id: 1
+      author: jakub.kolacz
+      file: changeset/0001_create_shops_table.yaml
+      relativeToChangelogFile: true
+  - include:
+      id: 2
+      author: jakub.kolacz
+      file: changeset/0002_insert_shops_data.yaml
+      relativeToChangelogFile: true

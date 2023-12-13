@@ -1,0 +1,137 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: twoje_imie
+      changes:
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "BIEDRONKA"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "LIDL"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "AUCHAN"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "CARREFOUR"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "KAUFLAND"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "LEWIATAN"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "DINO"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "TOP MARKET"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "POLO MARKET"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "EURO SPAR"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "GROSZEK"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "ZABKA"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "LECLERC"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "ABC"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "DELIKATESY CENTRUM"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "MAKRO"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "NETTO"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "ALDI"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "STOKROTKA"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "MARCPOL"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "INTERMARCHE"
+        - insert:
+            tableName: shops
+            columns:
+              - column:
+                  name: shop_name
+                  value: "EUROCASH"

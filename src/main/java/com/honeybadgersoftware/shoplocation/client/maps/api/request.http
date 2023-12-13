@@ -1,0 +1,1 @@
+GET https://atlas.microsoft.com/search/poi/category/json?api-version=1.0&query=supermarket&lat=52.133806&lon=21.065014&radius=500&subscription-key=qmRnfkk9mMhYKuWn2GukBHTInE3OwpvbZGUlQ3NVvvk
