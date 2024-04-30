@@ -6,7 +6,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(name = "azure-maps", url = "${azure-maps.url}", configuration = AzureMapsClientConfig.class)
+@FeignClient(name = "azureMaps", url = "${azure-maps.url}", configuration = AzureMapsClientConfig.class)
 public interface AzureMapsApi {
 
     @GetMapping("/search/poi/category/json")

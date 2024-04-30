@@ -1,11 +1,14 @@
 databaseChangeLog:
   - changeSet:
       id: 2
-      author: twoje_imie
+      author: Jakub.Kolacz
       changes:
         - insert:
             tableName: shops
             columns:
+              - column:
+                  name: id
+                  value: 1
               - column:
                   name: shop_name
                   value: "BIEDRONKA"
@@ -13,11 +16,17 @@ databaseChangeLog:
             tableName: shops
             columns:
               - column:
+                  name: id
+                  value: 2
+              - column:
                   name: shop_name
                   value: "LIDL"
         - insert:
             tableName: shops
             columns:
+              - column:
+                  name: id
+                  value: 3
               - column:
                   name: shop_name
                   value: "AUCHAN"
@@ -25,11 +34,17 @@ databaseChangeLog:
             tableName: shops
             columns:
               - column:
+                  name: id
+                  value: 4
+              - column:
                   name: shop_name
                   value: "CARREFOUR"
         - insert:
             tableName: shops
             columns:
+              - column:
+                  name: id
+                  value: 5
               - column:
                   name: shop_name
                   value: "KAUFLAND"
@@ -37,11 +52,17 @@ databaseChangeLog:
             tableName: shops
             columns:
               - column:
+                  name: id
+                  value: 6
+              - column:
                   name: shop_name
                   value: "LEWIATAN"
         - insert:
             tableName: shops
             columns:
+              - column:
+                  name: id
+                  value: 7
               - column:
                   name: shop_name
                   value: "DINO"
@@ -49,11 +70,17 @@ databaseChangeLog:
             tableName: shops
             columns:
               - column:
+                  name: id
+                  value: 8
+              - column:
                   name: shop_name
                   value: "TOP MARKET"
         - insert:
             tableName: shops
             columns:
+              - column:
+                  name: id
+                  value: 9
               - column:
                   name: shop_name
                   value: "POLO MARKET"
@@ -61,11 +88,17 @@ databaseChangeLog:
             tableName: shops
             columns:
               - column:
+                  name: id
+                  value: 10
+              - column:
                   name: shop_name
                   value: "EURO SPAR"
         - insert:
             tableName: shops
             columns:
+              - column:
+                  name: id
+                  value: 11
               - column:
                   name: shop_name
                   value: "GROSZEK"
@@ -73,11 +106,17 @@ databaseChangeLog:
             tableName: shops
             columns:
               - column:
+                  name: id
+                  value: 12
+              - column:
                   name: shop_name
                   value: "ZABKA"
         - insert:
             tableName: shops
             columns:
+              - column:
+                  name: id
+                  value: 13
               - column:
                   name: shop_name
                   value: "LECLERC"
@@ -85,11 +124,17 @@ databaseChangeLog:
             tableName: shops
             columns:
               - column:
+                  name: id
+                  value: 14
+              - column:
                   name: shop_name
                   value: "ABC"
         - insert:
             tableName: shops
             columns:
+              - column:
+                  name: id
+                  value: 15
               - column:
                   name: shop_name
                   value: "DELIKATESY CENTRUM"
@@ -97,11 +142,17 @@ databaseChangeLog:
             tableName: shops
             columns:
               - column:
+                  name: id
+                  value: 16
+              - column:
                   name: shop_name
                   value: "MAKRO"
         - insert:
             tableName: shops
             columns:
+              - column:
+                  name: id
+                  value: 17
               - column:
                   name: shop_name
                   value: "NETTO"
@@ -109,11 +160,17 @@ databaseChangeLog:
             tableName: shops
             columns:
               - column:
+                  name: id
+                  value: 18
+              - column:
                   name: shop_name
                   value: "ALDI"
         - insert:
             tableName: shops
             columns:
+              - column:
+                  name: id
+                  value: 19
               - column:
                   name: shop_name
                   value: "STOKROTKA"
@@ -121,17 +178,26 @@ databaseChangeLog:
             tableName: shops
             columns:
               - column:
+                  name: id
+                  value: 20
+              - column:
                   name: shop_name
                   value: "MARCPOL"
         - insert:
             tableName: shops
             columns:
               - column:
+                  name: id
+                  value: 21
+              - column:
                   name: shop_name
                   value: "INTERMARCHE"
         - insert:
             tableName: shops
             columns:
+              - column:
+                  name: id
+                  value: 22
               - column:
                   name: shop_name
                   value: "EUROCASH"

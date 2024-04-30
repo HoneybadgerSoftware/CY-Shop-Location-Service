@@ -7,8 +7,8 @@ class AzureResponseData {
   "summary": {
     "totalResults": 1,
     "geoBias": {
-      "lat": 52.133806,
-      "lon": 21.065014
+      "lat": 54.233806,
+      "lon": 23.665014
     }
   },
   "results": [
