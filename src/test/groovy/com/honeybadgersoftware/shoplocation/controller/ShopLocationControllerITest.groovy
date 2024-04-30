@@ -20,14 +20,9 @@ class ShopLocationControllerITest extends BaseIntegrationTest {
         Integer radius = 1000
 
         and:
-        wireMock.stubFor(get(urlEqualTo("https://atlas.microsoft.com/search/poi/category/json"))
-                .withQueryParam("lat", equalTo(lat.toString()))
-                .withQueryParam("lon", equalTo(lon.toString()))
-                .withQueryParam("radius", equalTo(radius.toString()))
-                .withQueryParam("api-version", equalTo("1.0"))
-                .withQueryParam("query", equalTo("supermarket"))
-                .withQueryParam("subscriptionKey", equalTo("qmRnfkk9mMhYKuWn2GukBHTInE3OwpvbZGUlQ3NVvvk"))
+        wireMock.stubFor(get(urlEqualTo("/search/poi/category/json?lat=${lat}&lon=${lon}&radius=${radius}&api-version=1.0&query=supermarket&subscription-key=test"))
                 .willReturn(aResponse()
+                        .withHeader("Content-Type", "application/json")
                         .withBody(AzureResponseData.AzureResponse)
                         .withStatus(200))
         )
@@ -48,6 +43,7 @@ class ShopLocationControllerITest extends BaseIntegrationTest {
 
         then:
         response.getStatusCode() == HttpStatus.OK
+        response.getBody().data.get(0) == 4L
 
     }
 }

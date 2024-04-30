@@ -33,9 +33,8 @@ public class ShopLocationServiceImpl implements ShopLocationService {
     }
 
     private boolean isNameContainedInShopNames(String name, List<String> shopNames) {
-        String lowerCaseName = name.toLowerCase();
         return shopNames.stream()
-                .anyMatch(shopName -> shopName.contains(lowerCaseName));
+                .anyMatch(shopName -> shopName.contains(name.toLowerCase()));
     }
 
 }

@@ -18,15 +18,19 @@ import java.util.List;
 public class ShopLocationFacade {
 
     private final ShopLocationService shopLocationService;
-    private final AzureMapsApi azureMapsApi;
+    private final AzureMapsApi azureMaps;
     private final AzureResultToNamesStringsFactory namesStringFactory;
 
     public NearbyShopsIdsResponse getNearbyShopsIds(FindShopsRequest findShopsRequest) {
 
-        List<Result> results = secureNullResponse(azureMapsApi.searchPoiCategory(
+        AzureShopsLocationResponse azureShopsLocationResponse = azureMaps.searchPoiCategory(
                 findShopsRequest.getLatitude(),
                 findShopsRequest.getLongitude(),
-                findShopsRequest.getRadius()));
+                findShopsRequest.getRadius());
+
+        System.out.println(azureShopsLocationResponse);
+
+        List<Result> results = secureNullResponse(azureShopsLocationResponse);
 
 
         if (results.isEmpty()) {
