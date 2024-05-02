@@ -4,7 +4,7 @@ package com.honeybadgersoftware.shoplocation.controller
 import com.honeybadgersoftware.shoplocation.base.BaseIntegrationTest
 import com.honeybadgersoftware.shoplocation.data.AzureResponseData
 import com.honeybadgersoftware.shoplocation.model.FindShopsRequest
-import com.honeybadgersoftware.shoplocation.model.response.NearbyShopsIdsResponse
+import com.honeybadgersoftware.shoplocation.model.response.NearbyShopsResponse
 import org.springframework.http.*
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*
@@ -35,11 +35,11 @@ class ShopLocationControllerITest extends BaseIntegrationTest {
         HttpEntity<FindShopsRequest> requestEntity = new HttpEntity<>(request, headers)
 
         when:
-        ResponseEntity<NearbyShopsIdsResponse> response = restTemplate.exchange(
+        ResponseEntity<NearbyShopsResponse> response = restTemplate.exchange(
                 addressToUseForTests + "/location",
                 HttpMethod.POST,
                 requestEntity,
-                NearbyShopsIdsResponse.class)
+                NearbyShopsResponse.class)
 
         then:
         response.getStatusCode() == HttpStatus.OK

@@ -1,10 +1,10 @@
 package com.honeybadgersoftware.shoplocation.service;
 
-import com.honeybadgersoftware.shoplocation.model.ShopNamesEnum;
+import com.honeybadgersoftware.shoplocation.model.response.ShopDto;
 
 import java.util.List;
 
 public interface ShopLocationService {
 
-    List<Long> getShops(List<String> shopNames);
+    List<ShopDto> getShops(List<String> shopNames);
 }

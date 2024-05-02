@@ -5,7 +5,7 @@ import com.honeybadgersoftware.shoplocation.client.maps.model.AzureShopsLocation
 import com.honeybadgersoftware.shoplocation.client.maps.model.Result;
 import com.honeybadgersoftware.shoplocation.factory.AzureResultToNamesStringsFactory;
 import com.honeybadgersoftware.shoplocation.model.FindShopsRequest;
-import com.honeybadgersoftware.shoplocation.model.response.NearbyShopsIdsResponse;
+import com.honeybadgersoftware.shoplocation.model.response.NearbyShopsResponse;
 import com.honeybadgersoftware.shoplocation.service.ShopLocationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -21,23 +21,21 @@ public class ShopLocationFacade {
     private final AzureMapsApi azureMaps;
     private final AzureResultToNamesStringsFactory namesStringFactory;
 
-    public NearbyShopsIdsResponse getNearbyShopsIds(FindShopsRequest findShopsRequest) {
+    public NearbyShopsResponse getNearbyShopsIds(FindShopsRequest findShopsRequest) {
 
         AzureShopsLocationResponse azureShopsLocationResponse = azureMaps.searchPoiCategory(
                 findShopsRequest.getLatitude(),
                 findShopsRequest.getLongitude(),
                 findShopsRequest.getRadius());
 
-        System.out.println(azureShopsLocationResponse);
-
         List<Result> results = secureNullResponse(azureShopsLocationResponse);
 
 
         if (results.isEmpty()) {
-            return new NearbyShopsIdsResponse(Collections.emptyList());
+            return new NearbyShopsResponse(Collections.emptyList());
         }
 
-        return new NearbyShopsIdsResponse(shopLocationService.getShops(namesStringFactory.map(results)));
+        return new NearbyShopsResponse(shopLocationService.getShops(namesStringFactory.map(results)));
     }
 
     private List<Result> secureNullResponse(AzureShopsLocationResponse azureShopsLocationResponse) {

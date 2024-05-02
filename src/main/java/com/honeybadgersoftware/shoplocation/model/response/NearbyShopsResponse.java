@@ -9,8 +9,8 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class NearbyShopsIdsResponse {
+public class NearbyShopsResponse {
 
-    private List<Long> data;
+    private List<ShopDto> data;
 
 }
