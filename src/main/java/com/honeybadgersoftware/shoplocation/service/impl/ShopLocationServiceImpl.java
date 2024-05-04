@@ -22,6 +22,11 @@ public class ShopLocationServiceImpl implements ShopLocationService {
         return filterShopEntities(shopLocationRepository.findAll(), normalizeShopNames(shopNames));
     }
 
+    @Override
+    public Long getShopId(String name) {
+        return shopLocationRepository.findIdByShopName(name);
+    }
+
     private List<ShopDto> filterShopEntities(List<ShopEntity> entities, List<String> shopNames) {
         return entities.stream()
                 .filter(entity -> isNameContainedInShopNames(entity.getShopName(), shopNames))

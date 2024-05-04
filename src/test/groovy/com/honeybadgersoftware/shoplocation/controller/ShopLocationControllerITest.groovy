@@ -5,6 +5,7 @@ import com.honeybadgersoftware.shoplocation.base.BaseIntegrationTest
 import com.honeybadgersoftware.shoplocation.data.AzureResponseData
 import com.honeybadgersoftware.shoplocation.model.FindShopsRequest
 import com.honeybadgersoftware.shoplocation.model.response.NearbyShopsResponse
+import com.honeybadgersoftware.shoplocation.model.response.ShopIdResponse
 import org.springframework.http.*
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*
@@ -43,7 +44,21 @@ class ShopLocationControllerITest extends BaseIntegrationTest {
 
         then:
         response.getStatusCode() == HttpStatus.OK
-        response.getBody().data.get(0) == 4L
+        response.getBody().data.get(0).getId() == 4
+    }
 
+    def "getShopId returns correct id when valid shop name is provided"() {
+
+        given:
+        String shopName = "BIEDRONKA"
+
+        when:
+        ResponseEntity<ShopIdResponse> response = restTemplate.getForEntity(
+                addressToUseForTests + "/location?name=" + shopName,
+                ShopIdResponse.class)
+
+        then:
+        response.getStatusCode() == HttpStatus.OK
+        response.getBody().getShopId() == 1L
     }
 }

@@ -6,6 +6,7 @@ import com.honeybadgersoftware.shoplocation.client.maps.model.Result;
 import com.honeybadgersoftware.shoplocation.factory.AzureResultToNamesStringsFactory;
 import com.honeybadgersoftware.shoplocation.model.FindShopsRequest;
 import com.honeybadgersoftware.shoplocation.model.response.NearbyShopsResponse;
+import com.honeybadgersoftware.shoplocation.model.response.ShopIdResponse;
 import com.honeybadgersoftware.shoplocation.service.ShopLocationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -38,6 +39,10 @@ public class ShopLocationFacade {
         return new NearbyShopsResponse(shopLocationService.getShops(namesStringFactory.map(results)));
     }
 
+    public ShopIdResponse getShopId(String name) {
+        return ShopIdResponse.builder().shopId(shopLocationService.getShopId(name)).build();
+    }
+
     private List<Result> secureNullResponse(AzureShopsLocationResponse azureShopsLocationResponse) {
 
         if (azureShopsLocationResponse == null) {
@@ -52,5 +57,4 @@ public class ShopLocationFacade {
 
         return results;
     }
-
 }
